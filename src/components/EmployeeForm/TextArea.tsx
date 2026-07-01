@@ -1,17 +1,40 @@
 import type {JSX} from 'react';
+import type {EmployeeFormData} from "../../types/employeeFormTypes.ts";
 
 interface TextAreaProps {
-    // Props here
     label: string;
     placeholder: string;
+    value: string;
+    name: keyof EmployeeFormData;
+    isOptional?: boolean;
+    hasError?: boolean;
+    errorMessage?: string;
+    onChangeValue: (identifier: keyof EmployeeFormData, value: string) => void;
+    onValueBlur: (identifier: string) => void;
 }
 
-function TextArea({label, placeholder}: TextAreaProps): JSX.Element {
+function TextArea({
+                      label,
+                      placeholder,
+                      value,
+                      name,
+                      isOptional,
+                      hasError,
+                      errorMessage,
+                      onValueBlur,
+                      onChangeValue
+                  }: TextAreaProps): JSX.Element {
     return (
-        <div className="flex flex-col justify-center">
-            <label htmlFor={label} className="text-lg md:text-2xl block mb-4 font-medium">{label}</label>
-            <textarea id={label} placeholder={placeholder}
-                      className="text-sm md:text-lg outline-none border-2 border-light-grey focus:border-blue rounded-lg px-5 pt-4 pb-12"/>
+        <div className="flex flex-col justify-center gap-3">
+            <div className="flex gap-3 items-center">
+                <label htmlFor={label} className="text-lg md:text-2xl block mb-4 font-medium">{label}</label>
+                {isOptional && <span className="text-sm md:text-lg mb-4 text-blue">(OPTIONAL)</span>}
+            </div>
+            <textarea onChange={(event) => onChangeValue(name, event.target.value)} onBlur={() => onValueBlur(name)}
+                      value={value} id={name}
+                      placeholder={placeholder}
+                      className={`text-sm md:text-lg outline-none border-2 border-light-grey ${hasError ? "border-red-500" : ""} focus:border-blue rounded-lg px-5 pt-4 pb-12`}/>
+            {hasError && <p className="text-red-500 text-sm lg:text-lg">{errorMessage}</p>}
         </div>
     );
 }

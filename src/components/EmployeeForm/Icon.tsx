@@ -9,7 +9,7 @@ interface IconProps {
 
 function Icon({icon: Icon, clickable}: IconProps): JSX.Element {
     return (
-        <div className={`text-3xl md:text-5xl text-light-grey ${clickable ? "cursor-pointer" : ""}`}>
+        <div className={`text-3xl md:text-4xl text-light-grey ${clickable ? "cursor-pointer" : ""}`}>
             <Icon/>
         </div>
     );
