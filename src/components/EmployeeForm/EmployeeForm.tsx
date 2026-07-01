@@ -60,7 +60,7 @@ function EmployeeForm(): JSX.Element {
         return {
             name: !isNotEmpty(formData.name),
             email: !isEmail(formData.email),
-            phoneNumber: (!hasMinLength(formData.phoneNumber, 12) || !isPhoneNumber(formData.phoneNumber)),
+            phoneNumber: (!hasMinLength(formData.phoneNumber, 11) || !isPhoneNumber(formData.phoneNumber)),
             department: !isSelected(formData.department),
             position: !isNotEmpty(formData.position),
             salary: !isPositiveNumber(formData.salary),

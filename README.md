@@ -12,12 +12,6 @@ applications.
 
 ---
 
-## Live Demo
-
-🔗 **Demo:** [View Live Demo](YOUR_DEPLOYMENT_LINK_HERE)
-
----
-
 ## Preview
 
 ### Desktop View
