@@ -173,7 +173,7 @@ function EmployeeForm(): JSX.Element {
                               label="Work Location"
                               name="location" options={locationOptions}/>
                     <Checkbox onValueChange={handleChange} onValueBlur={handleBlur} value={formData.isRemote}
-                              label="Works Remotely"
+                              label="Works Remotely" isOptional={true}
                               checkboxName="Remote" name="isRemote"/>
                     <div className="col-span-full md:col-span-2">
                         <TextArea hasError={didEdit.skills && errors.skills} errorMessage="Please write a valid text"
