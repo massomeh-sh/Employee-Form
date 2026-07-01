@@ -25,10 +25,10 @@ function TextArea({
                       onChangeValue
                   }: TextAreaProps): JSX.Element {
     return (
-        <div className="flex flex-col justify-center gap-3">
-            <div className="flex gap-3 items-center">
-                <label htmlFor={label} className="text-lg md:text-2xl block mb-4 font-medium">{label}</label>
-                {isOptional && <span className="text-sm md:text-lg mb-4 text-blue">(OPTIONAL)</span>}
+        <div className="flex flex-col justify-center gap-1">
+            <div className="flex gap-3 items-center mb-1 md:mb-4">
+                <label htmlFor={label} className="text-lg md:text-2xl block font-medium">{label}</label>
+                {isOptional && <span className="text-sm md:text-lg  text-blue">(OPTIONAL)</span>}
             </div>
             <textarea onChange={(event) => onChangeValue(name, event.target.value)} onBlur={() => onValueBlur(name)}
                       value={value} id={name}

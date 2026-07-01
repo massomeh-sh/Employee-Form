@@ -1,75 +1,185 @@
-# React + TypeScript + Vite
+# Employee Management Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-Latest-646CFF?logo=vite)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-Currently, two official plugins are available:
+A modern and responsive employee management form built with **React**, **TypeScript**, and **Tailwind CSS**. This
+project demonstrates best practices for form handling, validation, reusable components, and state management in React
+applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 **Demo:** [View Live Demo](YOUR_DEPLOYMENT_LINK_HERE)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Preview
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Desktop View
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+![Desktop Screenshot](./screenshots/desktop.png)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Errors view
 
+![Desktop ScreenShot](./screenShots/errors.png)
+
+### Mobile View
+
+![Mobile Screenshot](./screenshots/mobile.png)
+
+---
+
+## Features
+
+* Responsive employee registration form
+* Built with React and TypeScript
+* Reusable UI components
+* Controlled form inputs
+* Field validation on blur
+* Full form validation on submit
+* Error messages with user-friendly feedback
+* Form reset functionality
+* Type-safe state management
+* Clean and scalable project structure
+
+---
+
+## Tech Stack
+
+* React
+* TypeScript
+* Tailwind CSS
+* Vite
+* React Icons
+
+---
+
+## Validation Rules
+
+The form validates:
+
+* Full Name
+* Email Address
+* Phone Number
+* Department Selection
+* Position
+* Salary
+* Join Date
+* Employment Type
+* Work Location
+* Skills
+
+Validation utilities include:
+
+```text id="t8lcg9"
+isNotEmpty()
+isEmail()
+isPhoneNumber()
+hasMinLength()
+isPositiveNumber()
+isSelected()
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text id="xfh9k8"
+src/
+├── components/
+│   ├── EmployeeForm/
+│   ├── Input.tsx
+│   ├── Selector.tsx
+│   ├── Radio.tsx
+│   ├── Checkbox.tsx
+│   ├── TextArea.tsx
+│   └── Button.tsx
+│
+├── types/
+│   └── employeeFormTypes.ts
+│
+├── utils/
+│   └── validateFn.ts
+│
+├── App.tsx
+└── main.tsx
 ```
+
+---
+
+## Getting Started
+
+### Clone the Repository
+
+```bash id="e65xk9"
+git clone https://github.com/your-username/employee-management-form.git
+```
+
+### Navigate to the Project
+
+```bash id="bndk5n"
+cd employee-management-form
+```
+
+### Install Dependencies
+
+```bash id="4we90m"
+npm install
+```
+
+### Start Development Server
+
+```bash id="hajvry"
+npm run dev
+```
+
+### Build for Production
+
+```bash id="2af0yj"
+npm run build
+```
+
+---
+
+## Learning Goals
+
+This project was created to practice:
+
+* React state management
+* Controlled components
+* Form validation patterns
+* TypeScript with React
+* Reusable component architecture
+* Tailwind CSS styling
+* User experience improvements for forms
+
+---
+
+## Future Improvements
+
+* Backend integration
+* Employee data persistence
+* Edit and delete employee records
+* Search and filtering
+* React Hook Form integration
+* Zod schema validation
+* Toast notifications
+* Unit and integration tests
+* Dark mode
+
+---
+
+## Author
+
+Created by **Massomeh Sh** as part of a React and TypeScript learning journey.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
