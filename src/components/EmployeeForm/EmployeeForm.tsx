@@ -103,7 +103,7 @@ function EmployeeForm(): JSX.Element {
     return (
         <div className="bg-background min-h-screen w-full">
             <form noValidate onSubmit={handleSubmit} onReset={handleResetForm}
-                  className="py-10 px-20">
+                  className="py-10 md:px-20 px-10">
                 <div className="flex justify-between items-center">
                     <div>
                         <h1 className="text-3xl md:text-4xl font-medium">Add Employee</h1>
